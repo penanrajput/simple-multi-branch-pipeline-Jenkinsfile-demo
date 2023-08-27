@@ -25,12 +25,12 @@ pipeline {
 				echo "Executing for defect #${NAME} executing"
 			}
 		}
-		stage('Example') {
+		stage('TOGGLE') {
 			steps{
 				echo "Executing for defect #${TOGGLE} executing"
 			}
 		}
-		stage('Example') {
+		stage('CHOICE') {
 			steps{
 				echo "Executing for defect #${CHOICE} executing"
 			}
