@@ -1,34 +1,39 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
-            input {
+
+		input {
                 message "Should we continue?"
                 ok "Yes, we should."
                 submitter "alice,bob"
                 parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-					string(name: 'defect', defaultValue: '', description: 'Enter Defect Number')
-					string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                    string(name: 'NAME', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+					string(name: 'DEFECT', defaultValue: '', description: 'Enter Defect Number')
 					booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 					choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 				}
-            }
+		}
+
+        stage('Name') {
+            
             steps {
-                echo "Hello, ${PERSON}, nice to meet you."
+                echo "Hello, ${NAME}, nice to meet you."
             }
+		}
+		stage('defect') {
 			steps{
-				echo "Executing for defect #${defect} executing"
+				echo "Executing for defect #${NAME} executing"
 			}
-			steps{
-				echo "Executing for defect #${PERSON} executing"
-			}
+		}
+		stage('Example') {
 			steps{
 				echo "Executing for defect #${TOGGLE} executing"
 			}
+		}
+		stage('Example') {
 			steps{
 				echo "Executing for defect #${CHOICE} executing"
 			}
-        }
+		}
     }
 }
