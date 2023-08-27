@@ -3,12 +3,14 @@ pipeline {
   stages {
     stage('java stage') {
       steps {
-        sh 'java -version'
+			echo 'Hello, JDK'
+			sh 'java -version'
       }
     }
     stage('maven stage') {
       steps {
-        sh 'mvn -version'
+			echo 'Hello, Maven'
+			sh 'mvn -version'
       }
     }
   }
