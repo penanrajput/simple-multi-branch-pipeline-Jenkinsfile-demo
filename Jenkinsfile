@@ -26,5 +26,25 @@ pipeline {
                 echo '${params.state} is the parameter'
             }
         }
+		stage('BIOGRAPHY stage') {
+            steps {
+                echo '${params.BIOGRAPHY} is the parameter'
+            }
+        }
+		stage('TOGGLE stage') {
+            steps {
+                echo '${params.TOGGLE} is the parameter'
+            }
+        }
+		stage('CHOICE stage') {
+            steps {
+                echo '${params.CHOICE} is the parameter'
+            }
+        }
+		stage('PASSWORD stage') {
+            steps {
+                echo '${params.PASSWORD} is the parameter'
+            }
+        }
     }
 }
