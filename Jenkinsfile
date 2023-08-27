@@ -15,9 +15,9 @@ pipeline {
 			}
             steps {
                 echo "Hello, ${NAME}, nice to meet you."
-				echo "Executing for defect #${NAME} executing"
-				echo "Executing for defect #${TOGGLE} executing"
-				echo "Executing for defect #${CHOICE} executing"
+				echo "Executing for defect #${DEFECT} "
+				echo "Executing for toggle = ${TOGGLE} "
+				echo "Executing for choice = ${CHOICE} "
             }
 		}	
     }
