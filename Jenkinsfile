@@ -11,9 +11,19 @@ pipeline {
 
     }
     stages {
-        stage('test') {
+        stage('name stage') {
             steps {
-                echo '${params. name} is the parameter'
+                echo '${params.name} is the parameter'
+            }
+        }
+		stage('city stage') {
+            steps {
+                echo '${params.city} is the parameter'
+            }
+        }
+		stage('state stage') {
+            steps {
+                echo '${params.state} is the parameter'
             }
         }
     }
