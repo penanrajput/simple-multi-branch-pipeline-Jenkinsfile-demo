@@ -1,26 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('first stage') {
+    stage('java stage') {
       steps {
-        echo 'inside the first stage'
+        sh 'java -version'
       }
     }
-    stage('second stage') {
+    stage('maven stage') {
       steps {
-        echo 'inside the second stage'
+        sh 'mvn -version'
       }
     }
-    stage('third stage') {
-      steps {
-        echo 'inside the third stage'
-      }
-    }
-    stage('fourth stage') {
-      steps {
-        echo 'inside the fourth stage'
-      }
-    }
-
   }
 }
