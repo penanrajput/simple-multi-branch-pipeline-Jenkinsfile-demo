@@ -1,20 +1,22 @@
 pipeline {
   agent any
   stages {
-    parallel {
-      stage('java stage') {
+    stage('parallel stage'){
+		parallel {
+      
         steps {
           echo 'Hello, JDK'
           bat 'java -version'
-        }
+        
       }
-      stage('maven stage') {
+     
         steps {
           echo 'Hello, Maven'
           bat 'mvn -version'
-        }
+        
       }
     }
+	}
     stage('git stage') {
       steps {
         echo 'Hello, git'
