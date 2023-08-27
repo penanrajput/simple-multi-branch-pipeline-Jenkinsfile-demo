@@ -1,8 +1,8 @@
 pipeline {
     agent any
     stages {
-
-		input {
+        stage('Testing Input Feature') {
+            input {
                 message "Should we continue?"
                 ok "Yes, we should."
                 submitter "alice,bob"
@@ -12,28 +12,13 @@ pipeline {
 					booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 					choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
 				}
-		}
-
-        stage('Name') {
-            
+			}
             steps {
                 echo "Hello, ${NAME}, nice to meet you."
-            }
-		}
-		stage('defect') {
-			steps{
 				echo "Executing for defect #${NAME} executing"
-			}
-		}
-		stage('TOGGLE') {
-			steps{
 				echo "Executing for defect #${TOGGLE} executing"
-			}
-		}
-		stage('CHOICE') {
-			steps{
 				echo "Executing for defect #${CHOICE} executing"
-			}
-		}
+            }
+		}	
     }
 }
