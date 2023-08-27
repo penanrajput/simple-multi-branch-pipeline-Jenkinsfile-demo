@@ -31,12 +31,5 @@ pipeline {
       }
     }
 
-    stage('vscode stage') {
-      steps {
-        echo 'Hello, vscode'
-        bat 'code --version'
-      }
-    }
-
   }
 }
